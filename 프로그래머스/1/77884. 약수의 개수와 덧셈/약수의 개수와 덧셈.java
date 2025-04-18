@@ -9,6 +9,7 @@ class Solution {
             }
             answer += (cnt%2==0)? i : -i;
         }
+        // 다른 사람 풀이 : 제곱근이면 홀수 제곱근 아니면 짝수
         return answer;
     }
 }
