@@ -6,8 +6,8 @@ class Solution {
         String[] arr = s.split("");
         
         for(int i=0;i<arr.length;i++){
-            if(hm.containsKey(arr[i])) answer[i] = i-hm.get(arr[i]);
-            else answer[i] = -1;
+            answer[i] = i-hm.getOrDefault(arr[i],i+1);
+           
             hm.put(arr[i], i);
         }
         
