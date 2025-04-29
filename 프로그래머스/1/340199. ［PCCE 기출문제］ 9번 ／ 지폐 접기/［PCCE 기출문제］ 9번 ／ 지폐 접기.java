@@ -1,19 +1,20 @@
-import java.util.*;
 class Solution {
     public int solution(int[] wallet, int[] bill) {
         int answer = 0;
-        int wMax = Math.max(wallet[0], wallet[1]);
-        int wMin = Math.min(wallet[0], wallet[1]);
         
-        while(true){
-            if(wMax>=Math.max(bill[0], bill[1]) && wMin>=Math.min(bill[0], bill[1]))  break;
-            
-            if(bill[0]<bill[1]) bill[1]/=2;
-            else bill[0]/=2;
-            
+        while(max(wallet)<max(bill) || min(wallet)<min(bill) ) {
+            bill[(bill[0]<bill[1])?1:0]/=2;
             answer++;
         }
         
         return answer;
+    }
+    
+    private int max(int[] arr){
+        return Math.max(arr[0], arr[1]);
+    }
+
+    private int min(int[] arr){
+        return Math.min(arr[0], arr[1]);
     }
 }
