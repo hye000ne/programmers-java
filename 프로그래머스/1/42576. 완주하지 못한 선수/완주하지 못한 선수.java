@@ -5,11 +5,7 @@ class Solution {
         HashMap<String, Integer> hm = new HashMap<>();
         for(String s : participant) hm.put(s, hm.getOrDefault(s, 0)+1);
         for(String s : completion) hm.put(s, hm.get(s)-1);
-        HashSet<String> keys = new HashSet<>(hm.keySet());
-        for(String key : keys){
-            if(hm.get(key)==1) return key;
-        }
-        
+        for(String key : hm.keySet()) if(hm.get(key)==1) return key;
         return answer;
     }
 }
